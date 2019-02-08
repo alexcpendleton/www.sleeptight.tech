@@ -8,7 +8,7 @@ import Header from './header'
 import './layout.css'
 
 const Content = styled.div`
-  ${tw`px-32 py-8 font-sans`};
+  ${tw`px-32 py-8 bg-purple-darkest text-white font-serif`};
 `
 
 const Layout = ({ children }) => (
@@ -27,13 +27,15 @@ const Layout = ({ children }) => (
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: 'A sleep timer for your Mac.' },
+            {
+              name: 'keywords',
+              content: 'sleep, timer, mac, open source, free',
+            },
           ]}
         >
           <html lang="en" />
         </Helmet>
-        <Header siteTitle={data.site.siteMetadata.title} />
         <Content>{children}</Content>
       </>
     )}
