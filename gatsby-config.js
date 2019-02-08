@@ -2,7 +2,6 @@ module.exports = {
   siteMetadata: {
     title: 'Sleep Tight - A sleep timer for your Mac',
   },
-  pathPrefix: '',
   plugins: [
     'gatsby-plugin-tailwindcss',
     'gatsby-plugin-emotion',
