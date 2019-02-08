@@ -2,9 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styled from 'react-emotion'
-import { StaticQuery, graphql } from 'gatsby'
-
-import Header from './header'
+import { StaticQuery, graphql, withPrefix } from 'gatsby'
 import './layout.css'
 
 const Content = styled.div`
@@ -35,6 +33,18 @@ const Layout = ({ children }) => (
           ]}
         >
           <html lang="en" />
+          <meta httpEquiv="x-ua-compatible" content="ie=edge" />
+          <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+          />
+          <meta name="twitter:card" content="summary" />
+          <meta name="twitter:site" content="@alexcpendleton" />
+          <meta name="twitter:title" content={data.site.siteMetadata.title} />
+          <meta
+            name="twitter:image"
+            content="https://www.sleeptight.tech/twitter-card.png"
+          />
         </Helmet>
         <Content>{children}</Content>
       </>
