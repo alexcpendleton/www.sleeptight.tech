@@ -29,7 +29,6 @@ const IndexPage = () => (
         <img
           src={demo}
           width="600"
-          height="273"
           alt="Video demonstration of how to use the application by clicking the menubar icon, then using the slider which appears to choose an amount of time."
         />
       </figure>
