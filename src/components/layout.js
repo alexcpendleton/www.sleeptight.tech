@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Helmet from 'react-helmet'
 import styled from 'react-emotion'
-import { StaticQuery, graphql, withPrefix } from 'gatsby'
+import { StaticQuery, graphql } from 'gatsby'
 import './layout.css'
 
 const Content = styled.div`
@@ -16,6 +16,8 @@ const Layout = ({ children }) => (
         site {
           siteMetadata {
             title
+            siteUri
+            cardImageUri
           }
         }
       }
@@ -39,11 +41,26 @@ const Layout = ({ children }) => (
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
           />
           <meta name="twitter:card" content="summary" />
+          <meta name="twitter:creator" content="@alexcpendleton" />
           <meta name="twitter:site" content="@alexcpendleton" />
           <meta name="twitter:title" content={data.site.siteMetadata.title} />
           <meta
             name="twitter:image"
-            content="https://www.sleeptight.tech/twitter-card.png"
+            content={data.site.siteMetadata.cardImageUri}
+          />
+          <meta
+            name="twitter:image:alt"
+            content="A screenshot of the Sleep Tight app."
+          />
+          <meta property="og:url" content={data.site.siteMetadata.siteUri} />
+          <meta property="og:title" content={data.site.siteMetadata.title} />
+          <meta
+            property="og:description"
+            content={data.site.siteMetadata.title}
+          />
+          <meta
+            property="og:image"
+            content={data.site.siteMetadata.cardImageUri}
           />
         </Helmet>
         <Content>{children}</Content>

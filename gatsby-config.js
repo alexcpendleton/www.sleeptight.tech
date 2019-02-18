@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: 'Sleep Tight - A sleep timer for your Mac',
+    cardImageUri: 'https://www.sleeptight.tech/twitter-card.png',
+    siteUri: 'https:///www.sleeptight.tech',
   },
   plugins: [
     'gatsby-plugin-tailwindcss',
